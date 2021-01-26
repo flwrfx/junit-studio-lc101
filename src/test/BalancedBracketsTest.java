@@ -2,7 +2,7 @@ package test;
 
 /*
 @Test
-public void (){ }
+public void (){ assertTrue(BalancedBrackets.hasBalancedBrackets("")) }
     */
 
 import main.BalancedBrackets;
@@ -14,13 +14,17 @@ public class BalancedBracketsTest {
 
     //TODO: add tests here
     @Test
-    public void emptyTest() {
-        assertEquals(true, true);
-    }
+    public void emptyTest() { assertEquals(true, true); }
 
     @Test
-    public void onlyBracketsReturnsTrue() {
-        assertTrue(BalancedBrackets.hasBalancedBrackets("[]"));
-    }
+    public void onlyBracketsReturnsTrue() { assertTrue(BalancedBrackets.hasBalancedBrackets("[]")); }
 
-}
+    @Test
+    /**lower fringe case*/
+    public void noBracketsReturnsTrue(){ assertTrue(BalancedBrackets.hasBalancedBrackets("")); }
+
+    @Test
+    public void misorderedBracketsReturnsFalse(){ assertFalse(BalancedBrackets.hasBalancedBrackets("][")); }
+
+
+}//class
